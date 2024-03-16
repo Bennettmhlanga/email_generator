@@ -22,6 +22,7 @@ def draftingemails(email, openai_api_key):
     8. Ensure the language is straightforward, with minimal jargon.
     9. Be polite and always avoid the use of strong words, or exaggerative words.
     10. If you are congratulated for recieving an offer, you need to thank them for the offer and provide a relevant reply.
+    11. Your replies should not go into too much detail, just give a relevant response without much steps.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
