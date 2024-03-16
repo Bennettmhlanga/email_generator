@@ -21,8 +21,8 @@ def draftingemails(email, openai_api_key):
     7. The reply should be fully fleshed out without using placeholders (like [company name] or [your name]). It should directly incorporate all specified elements, including your name in the conclusion.
     8. Ensure the language is straightforward, with minimal jargon.
     9. Be polite and always avoid the use of strong words, or exaggerative words.
-    10. If you are congratulated for recieving an offer, you need to thank them for the offer and provide a relevant reply, always use positive sentiments on these emails.
-    11. Your replies should not go into too much detail, just give a relevant response without much steps.
+    10. If you are congratulated for recieving an offer, you need to thank them for the offer and provide a relevant reply, always use positive sentiments on these emails to show your willingness to the offer.
+    11. Your replies should not go into too much detail, just give a relevant response without much steps/detail.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
