@@ -1,4 +1,5 @@
 import msal
+import config
 import requests
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
@@ -8,7 +9,7 @@ import streamlit as st
 def draftingemails(email):
     # Call GPT-3
     url = "https://api.openai.com/v1/chat/completions"
-    openai_api_key = "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"
+    openai_api_key = config.OPENAI_API_KEY
     model_name = "gpt-3.5-turbo"  
 
     headers = {
