@@ -23,6 +23,7 @@ def draftingemails(email, openai_api_key):
     9. Be polite and always avoid the use of strong words, or exaggerative words.
     10. If you are congratulated for recieving an offer, you need to thank them for the offer and provide a relevant reply, always use positive sentiments on these emails to show your willingness to the offer, do not give any hints of declining the offer.
     11. Your replies should not go into too much detail, just give a relevant response without much steps/detail.
+    12. Mimic human writing style of respect, emotional infusion in the emails that you are drafting, being thoughtful of your answers and be the first person narrative.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
