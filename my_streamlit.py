@@ -1,21 +1,16 @@
-import msal
-import config
 import requests
-from datetime import datetime, timedelta
-from bs4 import BeautifulSoup
 import json
 import streamlit as st
 
-def draftingemails(email):
+def draftingemails(email, openai_api_key):
     # Call GPT-3
     url = "https://api.openai.com/v1/chat/completions"
-    openai_api_key = config.OPENAI_API_KEY
-    model_name = "gpt-3.5-turbo"  
+    model_name = "gpt-3.5-turbo"
 
     headers = {
         "Authorization": f"Bearer {openai_api_key}"
     }
-    query =f"""You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
+    query = f"""You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
     Craft a reply to a given email :{email}:, matching its tone. Here are the steps:
     1. Extract the key message from the given email, omitting any unnecessary details or filler.
     2. Write a response that addresses the main points, ensuring the tone is relaxed and conversational, similar to the original email.
@@ -25,8 +20,7 @@ def draftingemails(email):
     6. End with a closing that matches the email's tone, followed by a blank line. Then, ensure your name is placed on its own in the last sentence, effectively serving as a personalized sign-off.
     7. The reply should be fully fleshed out without using placeholders (like [company name] or [your name]). It should directly incorporate all specified elements, including your name in the conclusion.
     8. Ensure the language is straightforward, with minimal jargon.
-    9. Be polite and always avoid the use of strong words, or exagerative words.
-    
+    9. Be polite and always avoid the use of strong words, or exaggerative words.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
@@ -34,13 +28,8 @@ def draftingemails(email):
     - Make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name.
     - Make sure for the salutation use warm regards and best regard only.
     - Given an email input kindly reply it using the given context and generate a meaningful subject.
-"""
+    """
 
-
-
-    ###
-   
-    ###
     data = {
         "model": model_name,
         "messages": [
@@ -61,15 +50,19 @@ def draftingemails(email):
     return info
 
 st.set_page_config(layout="wide")
-
-
 st.markdown("<h1 style='text-align: center;'>EMAIL AUTOMATION</h1>", unsafe_allow_html=True)
-c1,c2 = st.columns(2)
-with c1:
 
-    sample_email= st.text_area("UPLOAD YOUR EMAIL HERE",height = 350)
-    x= st.button("generate Reply")
+# Ask the user for their OpenAI API Key
+openai_api_key = st.text_input("Enter your OpenAI API Key", type="password")
+
+c1, c2 = st.columns(2)
+with c1:
+    sample_email = st.text_area("UPLOAD YOUR EMAIL HERE", height=350)
+    generate_reply_button = st.button("Generate Reply")
+
 with c2:
-    
-    if x:
-        reply = st.info(draftingemails(sample_email))
+    if generate_reply_button and openai_api_key:
+        reply = draftingemails(sample_email, openai_api_key)
+        st.info(reply)
+    elif generate_reply_button and not openai_api_key:
+        st.error("Please enter your OpenAI API Key to generate a reply.")
