@@ -1,4 +1,4 @@
 msal
 requests
-BeautifulSoup
+BeautifulSoup4
 streamlit
