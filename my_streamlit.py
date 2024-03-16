@@ -15,7 +15,7 @@ def draftingemails(email):
         "Authorization": f"Bearer {openai_api_key}"
     }
     query =f"""You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
-    Craft a reply to a given email :{email}:, mirroring its tone. Here are the steps:
+    Craft a reply to a given email :{email}:, matching its tone. Here are the steps:
     1. Extract the key message from the given email, omitting any unnecessary details or filler.
     2. Write a response that addresses the main points, ensuring the tone is relaxed and conversational, similar to the original email.
     3. Include a subject line that fits the context.
@@ -30,8 +30,9 @@ def draftingemails(email):
     Remember:
     - The email address from the received email is the recipient for your reply.
     - Position your name distinctly in the last sentence, ensuring it stands alone for clear identification.
-    -make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name
-    -make sure for the salutation use warm regards and best regard only
+    - Make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name.
+    - Make sure for the salutation use warm regards and best regard only.
+    - Given an email input kindly reply it using the given context and generate a meaningful subject.
 """
 
 
