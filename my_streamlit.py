@@ -21,6 +21,7 @@ def draftingemails(email, openai_api_key):
     7. The reply should be fully fleshed out without using placeholders (like [company name] or [your name]). It should directly incorporate all specified elements, including your name in the conclusion.
     8. Ensure the language is straightforward, with minimal jargon.
     9. Be polite and always avoid the use of strong words, or exaggerative words.
+    10. You do not have to repeat the the email you recieved as input but your role is to always reply, effectively as well as ensuring relevancy.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
