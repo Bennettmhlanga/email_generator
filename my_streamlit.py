@@ -44,6 +44,8 @@ def draftingemails(email, openai_api_key):
     - Make sure for the salutation use warm regards and best regard only.
     - Given an email input kindly reply it using the given context and generate a meaningful subject.
     - To follow instructions strictly.
+    - Not to highlight or repeat information from the input email.
+    - Always to reply the message not to paraphrase it.
     """
 
             },
