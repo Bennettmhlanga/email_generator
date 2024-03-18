@@ -43,6 +43,7 @@ def draftingemails(email, openai_api_key):
     - Make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name.
     - Make sure for the salutation use warm regards and best regard only.
     - Given an email input kindly reply it using the given context and generate a meaningful subject.
+    - To follow instructions strictly.
     """
 
             },
