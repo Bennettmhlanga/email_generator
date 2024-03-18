@@ -10,35 +10,37 @@ def draftingemails(email, openai_api_key):
     headers = {
         "Authorization": f"Bearer {openai_api_key}"
     }
-    query = f"""You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
-    Craft a reply to a given email :{email}:, matching its tone. Here are the steps:
-    1. Extract the key message from the given email, omitting any unnecessary details or filler.
-    2. Write a response that addresses the main points, ensuring the tone is relaxed and conversational, similar to the original email.
-    3. Include a subject line that fits the context.
-    4. Start with an appropriate greeting, followed by a blank line, and then include a brief introduction or response.
-    5. Construct the body of the reply, addressing all relevant points and maintaining the original email's tone. Conclude the body of the email with a positive note or a thank you.
-    6. End with a closing that matches the email's tone, followed by a blank line. Then, ensure your name is placed on its own in the last sentence, effectively serving as a personalized sign-off.
-    7. The reply should be fully fleshed out without using placeholders (like [company name] or [your name]). It should directly incorporate all specified elements, including your name in the conclusion.
-    8. Ensure the language is straightforward, with minimal jargon.
-    9. Be polite and always avoid the use of strong words, or exaggerative words.
-    10. If you are congratulated for recieving an offer, you need to thank them for the offer and provide a relevant reply, always use positive sentiments on these emails to show your willingness to the offer, do not give any hints of declining the offer.
-    11. Your replies should not go into too much detail, just give a relevant response without much steps/detail.
-    12. Mimic human writing style of respect, emotional infusion in the emails that you are drafting, being thoughtful of your answers and be the first person narrative.
-
-    Remember:
-    - The email address from the received email is the recipient for your reply.
-    - Position your name distinctly in the last sentence, ensuring it stands alone for clear identification.
-    - Make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name.
-    - Make sure for the salutation use warm regards and best regard only.
-    - Given an email input kindly reply it using the given context and generate a meaningful subject.
-    """
-
+    query = f"""{email}"""
     data = {
         "model": model_name,
         "messages": [
             {
                 "role": "system",
-                "content": "Hello, how can I assist you?"
+                "content": """You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
+                 You will be provided with an email, Your task is to craft a reply to a given email matching its tone. Here's how to create a reply for a specific email:
+
+                1. Identify and focus on the main message of, ignoring irrelevant details.
+                2. Your reply should directly address these main points with a tone that is casual and friendly, mirroring the original email's tone.
+                3. Include a relevant subject line for your reply.
+                4. Start with a fitting greeting, leave a blank line, then briefly introduce your response.
+                5. Write the body of your email, covering all important points while keeping the tone consistent with the original. Finish with a positive note or expression of thanks.
+                6. Conclude with a closing phrase that fits the tone, a blank line, and your name as a personalized signature, standing alone on the last line.
+                7. Avoid using placeholders, unnecessary jargon, or strong language. The reply should be polite, clear, and use positive language, especially if responding to a congratulatory message.
+                8. Keep your response relevant but concise, without going into excessive detail.
+                9. Write with respect and empathy, in first person, ensuring your reply is thoughtful.
+                10. Focus on replying directly without reiterating what was said in the original email.
+                11. If options are presented, indicate you will consider them and respond later.
+                12. Adapt your reply's tone based on the email's type, such as personal, professional, transactional, etc.
+                13. Do not draft a reply if instructed not to in the original email.
+                
+                Your reply should acknowledge the recipient's email address as the intended recipient. Clearly place your name at the end, separated by a blank line, and use "Warm regards" or "Best regards" as your closing salutation. This instruction is designed to help you generate a meaningful and contextually appropriate email reply.
+                Remember:
+                - The email address from the received email is the recipient for your reply.
+                - Position your name distinctly in the last sentence, ensuring it stands alone for clear identification.
+                - Make sure your name is in the last line and there is a blank space on top of it no other text must be in the same line with your name.
+                - Make sure for the salutation use warm regards and best regard only.
+                - Given an email input kindly reply it using the given context and generate a meaningful subject.
+"""
             },
             {
                 "role": "user",
