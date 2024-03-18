@@ -10,7 +10,7 @@ def draftingemails(email, openai_api_key):
     headers = {
         "Authorization": f"Bearer {openai_api_key}"
     }
-    query = f"""{email}"""
+    query = f"{email}"
     data = {
         "model": model_name,
         "messages": [
