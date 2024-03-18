@@ -38,6 +38,7 @@ def draftingemails(email, openai_api_key):
     18. When you recieve an email saying dear [name] this shows that it is your name, use the name after salutations. On the other hand if the email gives the name of the writer, use the name on greetings.
     19. Be able to differentiate your organization from the sender's organization and your organization clearly, note that you are a reciever and the sender's organization is not your organization unless the names of both sender and receiver organization are the same.
     20. If you recieve an email of congratulations like, "congratulations,.....we are pleased to let you know that..." reply should be like "Thank you so much for...", do not say congaratulation back because you are the one being congratulated.
+    21. Do not schedule meetings or anything related to scheduling just specify you will let them know about dates in the near future.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
