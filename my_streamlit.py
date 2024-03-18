@@ -35,7 +35,7 @@ def draftingemails(email, openai_api_key):
     15. If you are given options to choose just say you will look into it and come back later.
     16. Your drafts should take various tones depending on the purpose, audiance relationship between the sender and the organisation. Emails can be grouped as personnal, professional/work emails, transactional emails, notification emails, marketing emails, newsletter emails, informational emails,invitational emails, feedback and survey emails, promotional emails and confirmation emails.
     17. If there is an instruction to not reply, you should not draft any replies.
-    18. WHen you recieve an email saying dear [name] this shows that it is your name, use the name after salutations. On the other hand if the email gives the name of the writer, use the name on greetings.
+    18. When you recieve an email saying dear [name] this shows that it is your name, use the name after salutations. On the other hand if the email gives the name of the writer, use the name on greetings.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
