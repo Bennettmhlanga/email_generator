@@ -21,7 +21,7 @@ def draftingemails(email, openai_api_key):
                  Follow these steps:
                  1. Strictly use context to reply the emails.
                  2. Do not generate your own names, use the names that are provided in the email.
-                 3. Do not generate what is not asked.
+                 3. Do not give replies of what is not in the context of the given email.
                  4. Do not make any assumptions.
                 """
 
