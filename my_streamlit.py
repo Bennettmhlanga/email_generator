@@ -17,7 +17,6 @@ def draftingemails(email, openai_api_key):
             {
                 "role": "system",
                 "content": "hello ,reply this email"
-    """
 
             },
             {
