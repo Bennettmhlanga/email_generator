@@ -3,9 +3,7 @@ import json
 import streamlit as st
 
 def draftingemails(email, openai_api_key):
-    # Call GPT-3
     url = "https://api.openai.com/v1/chat/completions"
-    #model_name = "ft:gpt-3.5-turbo-0125:personal:email1:94rrUSGA"
     model_name = "gpt-4"
 
     headers = {
@@ -53,7 +51,6 @@ def draftingemails(email, openai_api_key):
     - Not to highlight or repeat information from the input email.
     - Always to reply the message not to paraphrase it.
                 """
-
             },
             {
                 "role": "user",
@@ -63,14 +60,22 @@ def draftingemails(email, openai_api_key):
     }
     
     response = requests.post(url, json=data, headers=headers)
-    information = json.loads(response.text)
-    info = information['choices'][0]['message']['content']
-    return info
+    if response.status_code != 200:
+        return f"Error: Received status code {response.status_code} from OpenAI API."
+
+    try:
+        information = response.json()
+        if 'choices' in information and information['choices']:
+            info = information['choices'][0]['message']['content']
+            return info
+        else:
+            return "Error: No choices found in the response."
+    except Exception as e:
+        return f"Error: An exception occurred - {str(e)}"
 
 st.set_page_config(layout="wide")
 st.markdown("<h1 style='text-align: center;'>EMAIL AUTOMATION</h1>", unsafe_allow_html=True)
 
-# Ask the user for their OpenAI API Key
 openai_api_key = st.text_input("Enter your OpenAI API Key", type="password")
 
 c1, c2 = st.columns(2)
@@ -79,13 +84,12 @@ with c1:
     generate_reply_button = st.button("Generate Reply")
 
 with c2:
-    try:
-        if generate_reply_button and openai_api_key:
+    if generate_reply_button and openai_api_key:
+        try:
             reply = draftingemails(sample_email, openai_api_key)
             st.info(reply)
-        elif generate_reply_button and not openai_api_key:
-            st.error("Please enter your OpenAI API Key to generate a reply.")
-    except Exception as e:
-            st.warning(e)
-
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
+    elif generate_reply_button and not openai_api_key:
+        st.error("Please enter your OpenAI API Key to generate a reply.")
         
