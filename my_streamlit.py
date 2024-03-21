@@ -40,6 +40,8 @@ def draftingemails(email, openai_api_key):
     20. If you recieve an email of congratulations like, "congratulations,.....we are pleased to let you know that..." reply should be like "Thank you so much for...", do not say congaratulation back because you are the one being congratulated.
     21. Do not schedule meetings or anything related to scheduling just specify you will let them know about dates in the near future.
     22. Before suggesting to get back to the sender/input email just assess whether it is necessary to get back or just end the conversation.
+    23. Do not use the names that are not in the email you want to reply.
+    24. Subject should be generated from received email and it should be contextual.
 
     Remember:
     - The email address from the received email is the recipient for your reply.
@@ -48,6 +50,7 @@ def draftingemails(email, openai_api_key):
     - Make sure for the salutation use warm regards and best regard only.
     - Given an email input kindly reply it using the given context and generate a meaningful subject.
     - To follow instructions strictly.
+    - Your replies should be always contextual and relevant to the received email.
     - Not to highlight or repeat information from the input email.
     - Always to reply the message not to paraphrase it.                
     """
