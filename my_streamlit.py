@@ -7,13 +7,14 @@ def draftingemails(email, openai_api_key):
     url = "https://api.openai.com/v1/chat/completions"
     #model_name = "ft:gpt-3.5-turbo-0125:personal:email1:94rrUSGA"
     model_name = "ft:gpt-3.5-turbo-1106:personal:email2:95ARg6mi"
-
     headers = {
         "Authorization": f"Bearer {openai_api_key}"
     }
     query = f"{email}"
     data = {
         "model": model_name,
+        "max_tokens"=1000,
+        "temperature" = 0.7
         "messages": [
             {
                 "role": "system",
