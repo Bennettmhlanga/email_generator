@@ -77,8 +77,12 @@ with c1:
     generate_reply_button = st.button("Generate Reply")
 
 with c2:
-    if generate_reply_button and openai_api_key:
+    try:
+            if generate_reply_button and openai_api_key:
         reply = draftingemails(sample_email, openai_api_key)
         st.info(reply)
+    except Exception as e:
+            st.warning(e)
+
     elif generate_reply_button and not openai_api_key:
         st.error("Please enter your OpenAI API Key to generate a reply.")
