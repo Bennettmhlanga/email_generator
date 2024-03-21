@@ -16,8 +16,11 @@ def draftingemails(email, openai_api_key):
         "messages": [
             {
                 "role": "system",
-                "content": """Hello kindly reply this email. \n
-                Do not add names that are not given in the email"""
+                "content": """
+                Hello kindly reply this email. \n
+                Do not add names that are not given in the email. \n
+                Your reply should be relevant to the received email.
+                """
 
             },
             {
