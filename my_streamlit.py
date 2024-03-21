@@ -14,7 +14,7 @@ def draftingemails(email, openai_api_key):
     data = {
         "model": model_name,
         "max_tokens"=1000,
-        "temperature" = 0.7
+        "temperature" = 0.5
         "messages": [
             {
                 "role": "system",
