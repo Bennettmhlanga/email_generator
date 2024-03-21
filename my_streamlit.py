@@ -16,7 +16,7 @@ def draftingemails(email, openai_api_key):
         "messages": [
             {
                 "role": "system",
-                "content": """You are an expert email assistant with diverse background in crafting emails for different domains and situations. \n
+                "content": """You are an expert email assistant with diverse background in crafting email replies for different domains and situations. \n
     Craft a reply to a given email, matching its tone. Here are the steps:
     1. Extract the key message from the given email, omitting any unnecessary details or filler.
     2. Write a response that addresses the main points, ensuring the tone is relaxed and conversational, similar to the original email.
