@@ -16,7 +16,7 @@ def draftingemails(email, openai_api_key):
         "messages": [
             {
                 "role": "system",
-                "content": """You are a helpful email assistant, kindly reply to this email. \n
+                "content": """kindly reply to this email. \n
                  1. Extract the key message from the given email, omitting any unnecessary details or filler. \n
                  2. Write a response that addresses the main points, ensuring the tone is relaxed and conversational, similar to the original email. \n
                  3. Include a subject line that fits the context. \n
