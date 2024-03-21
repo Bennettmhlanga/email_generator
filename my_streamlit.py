@@ -19,9 +19,10 @@ def draftingemails(email, openai_api_key):
                 "content": """
                 Hello you are provided with an email, your job is to reply to the email, within context.
                  Follow these steps:
-                 1. Always use context to reply the emails.
-                 2. Do not generate your own names use the names that are provided in the email.
+                 1. Strictly use context to reply the emails.
+                 2. Do not generate your own names, use the names that are provided in the email.
                  3. Do not generate what is not asked.
+                 4. Do not make any assumptions.
                 """
 
             },
