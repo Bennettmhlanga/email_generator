@@ -124,7 +124,7 @@ with cols[1]:
 
 # Draft email with search results in the third column
 with cols[2]:
-    openai_api_key = st.secrets["OPENAI_API_KEY"] # Replace with your actual OpenAI API key
+    openai_api_key = st.secrets[openai_key] # Replace with your actual OpenAI API key
     reply = draftingemails(sample_email, openai_api_key, [])
     st.markdown("<h3 style='text-align: center;'>GPT Output:</h3>", unsafe_allow_html=True)
     st.markdown("<div style='height: 400px; overflow: auto; border: 0px solid #e0e0e0; padding: 10px;background-color:#2C2C2C'>{}</div>".format(reply), unsafe_allow_html=True)
