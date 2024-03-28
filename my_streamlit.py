@@ -41,7 +41,7 @@ def draftingemails(email, openai_api_key, search_results):
                     If {message_pair} is suitable:
                     - Use {message_pair} as a reply to the email input ALWAYS.
                     - Use it to make your own reply around it, take its context and important points to create your reply.
-                    - REMEMBER: AS LONG AS {message_pair} IS SUTABLE USE IT!!!.
+                    - REMEMBER: AS LONG AS {message_pair} IS SUITABLE USE IT!!!.
                     - Do not add additional content that is not related/not stated in: {message_pair}, {message_pair} is our key.
                     - If the: {message_pair} message is starting by hi, hello [Name], note that is your name you need it to put it after your salutations, and the name after salutations is the name of the message sender, you can use it for greeting the sender of the message.
                     - Position your name clearly and separately at the end of the email.
