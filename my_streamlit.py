@@ -47,6 +47,7 @@ def draftingemails(email, openai_api_key, search_results):
                     - Position your name clearly and separately at the end of the email.
                     - Sign off with 'Warm regards' or 'Best regards', leaving a blank line before your name, which should be on a separate line.
                     - Ensure the reply is concise, addressing all points with a positive closure.
+                    - If the input emails does not have names avoid using names in your output.
                     
                     If not:
                     - Compose a reply that matches the original email's tone. Follow these guidelines:
