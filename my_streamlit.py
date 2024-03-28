@@ -68,6 +68,7 @@ def draftingemails(email, openai_api_key, search_results):
                         15. Differentiate between your organization and the sender's, especially in professional contexts.
                         16. For congratulatory emails, thank the sender without reciprocating congratulations.
                         17. Carefully consider whether to end the conversation or suggest further contact.
+                        18. Do not put placeholders [] for information that you do not know, just indicate that you will come back to them.
                     
                     Remember:
                     - The sender's text address is where you'll send your reply.
