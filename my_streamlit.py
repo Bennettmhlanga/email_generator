@@ -48,7 +48,7 @@ def draftingemails(email, openai_api_key, search_results):
                     - Sign off with 'Warm regards' or 'Best regards', leaving a blank line before your name, which should be on a separate line.
                     - Ensure the reply is concise, addressing all points with a positive closure.
                     - If the input emails does not have names avoid using names in your output.
-                    - Provide complete information based on context avoid/stop/do not using Placeholders [add information here] at all costs.
+                    - AVOID/STOP/DON'T use Placeholders like [add information here] at all costs.
                     
                     If not:
                     - Compose a reply that matches the original email's tone. Follow these guidelines:
@@ -69,7 +69,7 @@ def draftingemails(email, openai_api_key, search_results):
                         15. Differentiate between your organization and the sender's, especially in professional contexts.
                         16. For congratulatory emails, thank the sender without reciprocating congratulations.
                         17. Carefully consider whether to end the conversation or suggest further contact.
-                        18. Provide complete information based on context avoid/stop/do not use Placeholders [add information here] at all costs.
+                        18. AVOID/STOP/DON'T use Placeholders like [add information here] at all costs.
                     
                     Remember:
                     - The sender's text address is where you'll send your reply.
