@@ -2,3 +2,5 @@ msal
 requests
 BeautifulSoup4
 streamlit
+pandas
+fuzzywuzzy
